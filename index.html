@@ -7,7 +7,10 @@
     <title>SpendWise</title>
 </head>
 <body>
-    <h1>SpendWise</h1>
+    <div class="header-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/2331/2331966.png" alt="SpendWise wallet logo" width="48">
+        <h1>SpendWise</h1>
+    </div>
     <p>Welcome to my expense tracking application.</p>
 
     <h2>Expense Categories</h2>
@@ -18,6 +21,40 @@
         <li>Studies</li>
     </ul>
 
+    <details>
+        <summary>How to use this tracker</summary>
+        <p>Use the form below to add a new expense: type a name, enter the amount, pick a category from
+        the dropdown, and choose a date. Click "Add Expense" to save it (this button will become
+        functional once JavaScript is added in Week 7). All your expenses appear in the table above,
+        with the total shown at the bottom.</p>
+    </details>
+
+    <section class="add-expense-section">
+        <h2>Add Expense</h2>
+        <form id="expense-form">
+            <label for="expense-name">Name</label>
+            <input type="text" id="expense-name" name="expense-name" placeholder="e.g. Groceries">
+
+            <label for="expense-amount">Amount</label>
+            <input type="number" id="expense-amount" name="expense-amount" placeholder="0.00" step="0.01">
+
+            <label for="expense-category">Category</label>
+            <select id="expense-category" name="expense-category">
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="rent">Rent</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="expense-date">Date</label>
+            <input type="date" id="expense-date" name="expense-date">
+
+            <button type="button" id="add-expense-btn">Add Expense</button>
+        </form>
+    </section>
+
+    <h2>Expenses</h2>
     <table>
         <thead>
             <tr>
@@ -72,50 +109,29 @@
     </table>
 
     <h2>Market Map Below!</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27836.065698865023!2d39.66396269462043!3d-0.45864946997272704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182035a7a8ae778d%3A0xb9c2d496089badf2!2sBula%20Mzuri%20Market!5e0!3m2!1sen!2ske!4v1788883168013!5m2!1sen!2ske" 
-    width="600" 
-    height="450" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="media-card">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27836.065698865023!2d39.66396269462043!3d-0.45864946997272704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182035a7a8ae778d%3A0xb9c2d496089badf2!2sBula%20Mzuri%20Market!5e0!3m2!1sen!2ske!4v1788883168013!5m2!1sen!2ske" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
     
    <h2>Life is short - How to spend it wisely</h2>
-   <iframe
-        src="https://www.youtube-nocookie.com/embed/XZYqX6ZY6QY?si=WTRWXLNjzW_7HW9x" 
-        width="560"
-        height="315"
-        style="border:0;"
-        loading="lazy"
-        title="Life is short - How to spend it wisely"
-        frameborder="0"
-        allowfullscreen>
-   </iframe>
-    <!--
-    <table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Amount</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            <td>Groceries</td>
-            <td>$45.00</td>
-        </tr>
-    </tbody>
-
-    <tfoot>
-        <tr>
-            <td>Total</td>
-            <td>$45.00</td>
-        </tr>
-    </tfoot>
-</table>
--->
-
+   <div class="media-card">
+       <iframe
+            src="https://www.youtube-nocookie.com/embed/XZYqX6ZY6QY?si=WTRWXLNjzW_7HW9x" 
+            width="560"
+            height="315"
+            style="border:0;"
+            loading="lazy"
+            title="Life is short - How to spend it wisely"
+            frameborder="0"
+            allowfullscreen>
+       </iframe>
+   </div>
 
 <script src="script.js"></script>
 </body>

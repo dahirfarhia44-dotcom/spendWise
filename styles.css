@@ -10,13 +10,20 @@ body {
     font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-h1 {
+.header-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     background-color: #1a1a1e;
-    color: #fff;
     padding: 20px 24px;
     margin: 0 -24px 24px -24px;
-    letter-spacing: 0.5px;
     border-bottom: 3px solid #c6f135;
+}
+
+h1 {
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin: 0;
 }
 
 h2 {
@@ -25,6 +32,75 @@ h2 {
     padding-bottom: 6px;
     margin-top: 40px;
     display: inline-block;
+}
+
+/* --- Collapsible info box --- */
+details {
+    background: white;
+    border: 1px solid #e0e0e3;
+    border-left: 4px solid #c6f135;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 16px 0 32px;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- Add Expense form --- */
+.add-expense-section {
+    background: white;
+    border: 1px solid #e0e0e3;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Direct child selector: only the immediate label/input/select children of the form are stacked */
+.add-expense-section form > * {
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Descendant selector: any input nested inside the add-expense section */
+.add-expense-section input,
+.add-expense-section select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95em;
+    width: 100%;
+    max-width: 280px;
+}
+
+/* Focus state for inputs */
+.add-expense-section input:focus,
+.add-expense-section select:focus {
+    outline: none;
+    border-color: #c6f135;
+    box-shadow: 0 0 0 3px rgba(198, 241, 53, 0.35);
+}
+
+/* Negation pseudo-class: style every form control except the button */
+.add-expense-section form :not(button) {
+    background-color: #fafafa;
+}
+
+#add-expense-btn {
+    background-color: #1a1a1e;
+    color: #c6f135;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#add-expense-btn:hover {
+    background-color: #2b2b30;
 }
 
 /* --- Table --- */
@@ -51,6 +127,11 @@ th {
 
 tbody tr:nth-child(even) {
     background-color: #fafafa;
+}
+
+/* Pseudo-class based on position */
+tbody tr:first-child {
+    font-weight: 600;
 }
 
 tbody tr:hover {
